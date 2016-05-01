@@ -27,6 +27,8 @@ docker exec -it {image_name} /bin/bash
 cd /usr/local/hadoop
 
 # run the map-reduce
-/usr/local/hadoop/bin/hadoop jar /usr/local/hadoop-2.7.0/share/hadoop/tools/lib/hadoop-streaming-2.7.0.jar
- -mapper 'ruby /usr/local/hadoop/map.rb' -reducer 'ruby /usr/local/hadoop/reduce.rb' - file /usr/local/hadoop/map.rb -file /usr/local/hadoop/reduce.rb -input '/usr/local/data.txt' -output 'results'
-
+/usr/local/hadoop/bin/hadoop jar \
+/usr/local/hadoop-2.7.0/share/hadoop/tools/lib/hadoop-streaming-2.7.0.jar \
+-mapper 'ruby map.rb' -reducer 'ruby reduce.rb' -file ./map.rb -file \
+./reduce.rb -file ./test_data.txt -file ./sentiment_lexicon.yml -input \
+'test_data.txt' -output 'results15'
