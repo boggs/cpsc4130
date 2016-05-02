@@ -49,7 +49,7 @@ ctrl+c
 
 Grab the correct text out of the db
 ```sh
-ruby ./search.rb
+ruby ./search.rb 'trump'
 ```
 
 move the data onto the server
