@@ -14,11 +14,14 @@ end
 db = SQLite3::Database.new "test.db"
 
 # create a table
-rows = db.execute <<-SQL
-  create table tweets (
-    message varchar(140)
-  );
-SQL
+begin
+  rows = db.execute <<-SQL
+    create table tweets (
+      message varchar(140)
+    );
+  SQL
+rescue
+end
 
 # insert tweets
 begin

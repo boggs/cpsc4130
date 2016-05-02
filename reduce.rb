@@ -5,3 +5,4 @@ ARGF.each do |line|
 
   total += line
 end
+puts total
