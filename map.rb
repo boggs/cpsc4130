@@ -1,4 +1,3 @@
-require 'pry'
 require 'yaml'
 
 sentiment_lexicon = YAML::load(File.open('sentiment_lexicon.yml'))
